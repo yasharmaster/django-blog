@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>{{ title }}</title>
 </head>
 <body>
 	<h1>hello this is template</h1>
+	{% for obj in object_list %}
+
+	{{ obj.id }}</br>
+	{% url "posts:detail" id=obj.id %}
+	<a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a></br>
+	{{ obj.content }}</br>
+	{{ obj.updated }}</br>
+
+	{% endfor %}
 </body>
 </html>
