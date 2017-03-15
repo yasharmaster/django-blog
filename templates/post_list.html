@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>{{ title }}</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block head_title %}{{ instance.title }} | {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+
 	<h1>hello this is template</h1>
 	{% for obj in object_list %}
 
@@ -14,5 +14,6 @@
 	{{ obj.updated }}</br>
 
 	{% endfor %}
-</body>
-</html>
+
+
+{% endblock content %}
